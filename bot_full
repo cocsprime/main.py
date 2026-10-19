@@ -1,0 +1,42 @@
+import os
+import discord
+from discord.ext import commands
+
+from bot_logic import DISCORD_TOKEN, gen_pass, cara_ou_coroa, emoji_aleatorio
+
+intents = discord.Intents.default()
+intents.message_content = True
+intents.members = True
+
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+
+@bot.event
+async def on_ready():
+    print("Estamos logados como " + str(bot.user))
+
+
+@bot.command()
+async def senha(ctx, tamanho: int):
+    await ctx.send(gen_pass(tamanho))
+
+
+@bot.command()
+async def moeda(ctx):
+    await ctx.send(cara_ou_coroa())
+
+
+@bot.command()
+async def emoji(ctx):
+    await ctx.send(emoji_aleatorio())
+
+
+@bot.command()
+async def joined(ctx, member: discord.Member):
+    await ctx.send(
+        f"{member.name} entrou em "
+        f"{discord.utils.format_dt(member.joined_at)}"
+        )
+
+
+bot.run(os.getenv(DISCORD_TOKEN))
