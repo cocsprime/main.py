@@ -1,0 +1,18 @@
+import random
+
+def gen_pass(pass_length):
+    elements = "+-/*!&$#?=@<>0123456789"
+    password = ""
+    for i in range(pass_length):
+        password += random.choice(elements)
+    return password
+
+def cara_ou_coroa():
+    return random.choice(["Cara", "Coroa"])
+
+def emoji_aleatorio():
+    emojis = ["😀", "😂", "😎", "😡", "😱",
+              "🥳", "🤔", "😴", "❤️", "🔥"]
+    return random.choice(emojis)
+    
+DISCORD_TOKEN = "MTU1NDI2NTE3NjE3NjMzNjkzNw.GeEbpg.pilpKF31N4ZYV3DXCD7lxqDJNlHQdsq9GoeBo4"
