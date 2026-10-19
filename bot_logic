@@ -15,4 +15,4 @@ def emoji_aleatorio():
               "🥳", "🤔", "😴", "❤️", "🔥"]
     return random.choice(emojis)
     
-DISCORD_TOKEN = "MTU1NDI2NTE3NjE3NjMzNjkzNw.GeEbpg.pilpKF31N4ZYV3DXCD7lxqDJNlHQdsq9GoeBo4"
+DISCORD_TOKEN = "secret"
